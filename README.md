@@ -9,6 +9,10 @@
 
 ※ 公開版では X のエンゲージメント自動化モジュール（`src/growth/x_growth.py` 等）を除外しています。
 
+| ダッシュボード | 予約投稿 | 分析 |
+|---|---|---|
+| ![ダッシュボード](static/demo/01_dashboard.png) | ![予約投稿](static/demo/04_schedule.png) | ![分析](static/demo/06_analytics.png) |
+
 ## 構成図
 
 ```mermaid
