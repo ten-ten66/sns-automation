@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>利用規約 | Beauty Content Manager</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #c4779a;
+      --primary-light: #f5e6ee;
+      --primary-dark: #9e5578;
+      --text: #2d2d2d;
+      --text-muted: #6b6b6b;
+      --border: #e8d5df;
+      --bg: #fdfbfc;
+      --surface: #ffffff;
+      --shadow: 0 1px 4px rgba(180, 100, 130, 0.08);
+    }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP',
+                   'Yu Gothic', 'Meiryo', -apple-system, BlinkMacSystemFont,
+                   'Segoe UI', sans-serif;
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
+    header {
+      background: var(--surface);
+      border-bottom: 2px solid var(--primary);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(196, 119, 154, 0.12);
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-mark svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    .header-text h1 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      letter-spacing: 0.02em;
+    }
+
+    .header-text p {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Main layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* Hero banner */
+    .page-hero {
+      background: linear-gradient(135deg, var(--primary-light) 0%, #fdf0f6 100%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 44px;
+      margin-bottom: 44px;
+    }
+
+    .page-hero h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: 0.02em;
+      margin-bottom: 6px;
+    }
+
+    .page-hero .en-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .page-hero p {
+      color: var(--text-muted);
+      font-size: 14px;
+      max-width: 560px;
+    }
+
+    .effective-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .effective-date::before {
+      content: "📅";
+      font-size: 13px;
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 44px;
+      box-shadow: var(--shadow);
+    }
+
+    .toc-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc-counter;
+      columns: 2;
+      column-gap: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .toc ol { columns: 1; }
+    }
+
+    .toc ol li {
+      counter-increment: toc-counter;
+      margin-bottom: 8px;
+      break-inside: avoid;
+    }
+
+    .toc ol li::before {
+      content: counter(toc-counter) ". ";
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .toc ol li a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.15s;
+    }
+
+    .toc ol li a:hover {
+      color: var(--primary);
+    }
+
+    /* Sections */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 90px;
+    }
+
+    @media (max-width: 600px) {
+      .page-hero { padding: 28px 24px; }
+      .section { padding: 28px 20px; }
+      .toc { padding: 24px 20px; }
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-num {
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .section-title-group h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .section-title-group .en-sub {
+      font-size: 11px;
+      color: var(--primary);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section p {
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section ul, .section ol {
+      margin: 10px 0 14px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .section ul li, .section ol li {
+      padding: 7px 0 7px 22px;
+      position: relative;
+      border-bottom: 1px solid #faf0f4;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .section ul li:last-child, .section ol li:last-child {
+      border-bottom: none;
+    }
+
+    .section ul li::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 15px;
+      width: 6px;
+      height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    .section ol {
+      counter-reset: list-counter;
+    }
+
+    .section ol li {
+      counter-increment: list-counter;
+    }
+
+    .section ol li::before {
+      content: counter(list-counter);
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 18px;
+      height: 18px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 18px;
+    }
+
+    .callout {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: var(--primary-dark);
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    .warning-box {
+      background: #fff8f0;
+      border: 1px solid #f0c080;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: #7a5200;
+    }
+
+    .warning-box::before {
+      content: "⚠️  ";
+    }
+
+    h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 20px 0 10px;
+    }
+
+    /* Footer */
+    footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0 0 32px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+      </svg>
+    </div>
+    <div class="header-text">
+      <h1>Beauty Content Manager</h1>
+      <p>Terms of Service</p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="page-hero">
+    <span class="en-label">Terms of Service</span>
+    <h2>利用規約</h2>
+    <p>Beauty Content Manager をご利用いただく前に、本利用規約をよくお読みください。本サービスを利用することにより、以下の規約に同意したものとみなされます。</p>
+    <div class="effective-date">最終更新日：2025年4月1日　／　施行日：2025年4月1日</div>
+  </div>
+
+  <nav class="toc">
+    <div class="toc-title">目次 — Table of Contents</div>
+    <ol>
+      <li><a href="#s1">サービスの概要</a></li>
+      <li><a href="#s2">利用条件</a></li>
+      <li><a href="#s3">TikTok アカウント連携</a></li>
+      <li><a href="#s4">ユーザーコンテンツ</a></li>
+      <li><a href="#s5">禁止事項</a></li>
+      <li><a href="#s6">知的財産権</a></li>
+      <li><a href="#s7">免責事項</a></li>
+      <li><a href="#s8">サービスの変更・終了</a></li>
+      <li><a href="#s9">損害賠償の制限</a></li>
+      <li><a href="#s10">準拠法・管轄</a></li>
+      <li><a href="#s11">規約の変更</a></li>
+      <li><a href="#s12">お問い合わせ</a></li>
+    </ol>
+  </nav>
+
+  <!-- Section 1 -->
+  <section class="section" id="s1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div class="section-title-group">
+        <h3>サービスの概要</h3>
+        <span class="en-sub">Overview of Service</span>
+      </div>
+    </div>
+    <p>Beauty Content Manager（以下「本サービス」）は、美容・コスメティックスに特化したコンテンツのスケジュール管理・自動投稿ツールです。TikTok API を利用し、ユーザーが作成した動画コンテンツを指定したスケジュールに従って TikTok へ自動投稿する機能を提供します。</p>
+    <p>本サービスが提供する主な機能は以下のとおりです。</p>
+    <ul>
+      <li>TikTok アカウントとの OAuth 連携認証</li>
+      <li>美容・コスメ動画コンテンツのスケジュール管理と予約投稿</li>
+      <li>投稿履歴・パフォーマンス分析ダッシュボード</li>
+      <li>ハッシュタグ・キャプション管理機能</li>
+      <li>複数アカウント管理（対応プランのみ）</li>
+    </ul>
+    <div class="callout">
+      <strong>重要</strong>
+      本サービスは TikTok の公式パートナーまたは関連企業ではありません。TikTok の商標・ブランドは ByteDance Ltd. に帰属します。
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="section" id="s2">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div class="section-title-group">
+        <h3>利用条件</h3>
+        <span class="en-sub">Eligibility &amp; Conditions of Use</span>
+      </div>
+    </div>
+    <p>本サービスを利用するには、以下の条件をすべて満たしている必要があります。</p>
+    <ol>
+      <li>日本国内または本サービスが利用可能な地域に居住していること</li>
+      <li>年齢が 18 歳以上であること（または保護者の同意を得た 13 歳以上の未成年者）</li>
+      <li>有効な TikTok アカウントを保有していること</li>
+      <li>本規約および TikTok の利用規約・コミュニティガイドラインに同意していること</li>
+      <li>商業目的での利用の場合、適用される法令を遵守していること</li>
+    </ol>
+    <p>法人・事業者として本サービスを利用する場合、契約に同意する権限を有する担当者がアカウントを作成するものとします。</p>
+    <p>本サービスへの登録完了をもって、本規約の全条項に同意したものとみなされます。</p>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="section" id="s3">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div class="section-title-group">
+        <h3>TikTok アカウント連携について</h3>
+        <span class="en-sub">TikTok Account Integration</span>
+      </div>
+    </div>
+    <p>本サービスは TikTok が提供する公式 API（TikTok API for Business / Content Posting API）を利用します。TikTok アカウントを連携することにより、以下の事項に同意いただいたものとします。</p>
+
+    <h4>3.1 アクセス許可</h4>
+    <ul>
+      <li>本サービスに対し、TikTok アカウントへのアクセス権限（コンテンツの投稿・読み取り）を付与すること</li>
+      <li>TikTok の OAuth 2.0 認証フローを経て、アクセストークンを本サービスが保存・使用すること</li>
+      <li>投稿スケジュールに基づき、本サービスが代理で TikTok へコンテンツを投稿すること</li>
+    </ul>
+
+    <h4>3.2 権限の取り消し</h4>
+    <p>ユーザーはいつでも TikTok のアカウント設定から本サービスへのアクセス権を取り消すことができます。権限の取り消し後は、スケジュール済みの投稿も含め、すべての自動投稿機能が停止されます。</p>
+
+    <h4>3.3 TikTok 規約の遵守</h4>
+    <p>本サービスを通じた TikTok へのコンテンツ投稿は、TikTok の以下の規約に従う必要があります。</p>
+    <ul>
+      <li>TikTok 利用規約（Terms of Service）</li>
+      <li>TikTok コミュニティガイドライン（Community Guidelines）</li>
+      <li>TikTok クリエイターマーケットプレイスポリシー（該当する場合）</li>
+      <li>TikTok 広告ポリシー（有料プロモーション含む場合）</li>
+    </ul>
+    <div class="warning-box">
+      TikTok の API 仕様変更、サービス中断、ポリシー改定により、本サービスの一部または全部の機能が影響を受ける場合があります。これらは当社の管理外であり、責任を負いかねます。
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="section" id="s4">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div class="section-title-group">
+        <h3>ユーザーコンテンツ</h3>
+        <span class="en-sub">User Content</span>
+      </div>
+    </div>
+    <p>ユーザーが本サービスにアップロードまたは管理するコンテンツ（動画、画像、テキスト、ハッシュタグ等。以下「ユーザーコンテンツ」）について、以下の条件が適用されます。</p>
+    <ol>
+      <li>ユーザーコンテンツに関するすべての権利はユーザーに帰属します。当社はユーザーコンテンツの所有権を主張しません。</li>
+      <li>ユーザーは、本サービスが投稿処理を行うために必要な範囲で、コンテンツを利用・処理することを当社に許諾します。</li>
+      <li>ユーザーは、アップロードするコンテンツが第三者の知的財産権・肖像権・プライバシーを侵害していないことを保証します。</li>
+      <li>美容・化粧品に関連する薬機法・景品表示法等の広告規制を遵守する責任はユーザーが負います。</li>
+      <li>当社はユーザーコンテンツを広告・マーケティング目的で使用しません。</li>
+    </ol>
+  </section>
+
+  <!-- Section 5 -->
+  <section class="section" id="s5">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <div class="section-title-group">
+        <h3>禁止事項</h3>
+        <span class="en-sub">Prohibited Activities</span>
+      </div>
+    </div>
+    <p>ユーザーは本サービスを利用するにあたり、以下の行為を行ってはなりません。</p>
+
+    <h4>5.1 コンテンツに関する禁止事項</h4>
+    <ul>
+      <li>虚偽・誇大広告となる美容・化粧品関連コンテンツの投稿（薬機法違反となるもの）</li>
+      <li>他者の著作権・商標権・肖像権を侵害するコンテンツのアップロード・投稿</li>
+      <li>差別的、暴力的、性的に露骨なコンテンツの投稿</li>
+      <li>TikTok のコミュニティガイドラインに違反するコンテンツの投稿</li>
+      <li>未成年者への不適切なコンテンツの配信</li>
+    </ul>
+
+    <h4>5.2 技術的な禁止事項</h4>
+    <ul>
+      <li>本サービスへの不正アクセス・リバースエンジニアリング・改ざん</li>
+      <li>自動化ツールを使用した過度なリクエスト送信（スパム行為）</li>
+      <li>TikTok API の利用制限を意図的に回避する行為</li>
+      <li>他のユーザーのアカウントへの不正アクセス・なりすまし</li>
+      <li>本サービスのセキュリティを脅かすマルウェアの送信</li>
+    </ul>
+
+    <h4>5.3 商業的な禁止事項</h4>
+    <ul>
+      <li>本サービスの再販・サブライセンス・転売</li>
+      <li>本サービスを利用した競合サービスの開発</li>
+      <li>当社の事前書面による承諾なしに本サービスを第三者へ提供すること</li>
+    </ul>
+  </section>
+
+  <!-- Section 6 -->
+  <section class="section" id="s6">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <div class="section-title-group">
+        <h3>知的財産権</h3>
+        <span class="en-sub">Intellectual Property</span>
+      </div>
+    </div>
+    <p>本サービス（ソフトウェア、UI デザイン、ロゴ、文章、データベース等）に関するすべての知的財産権は当社に帰属し、著作権法および関連する法律により保護されています。</p>
+    <p>当社は、ユーザーに対して本規約の条件のもと、本サービスを個人的・非商業的目的で利用するための限定的・非独占的・譲渡不可の使用権を付与します。</p>
+    <p>本サービスの名称「Beauty Content Manager」、ロゴおよびサービスに関連するすべての商標は当社の財産です。</p>
+  </section>
+
+  <!-- Section 7 -->
+  <section class="section" id="s7">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <div class="section-title-group">
+        <h3>免責事項</h3>
+        <span class="en-sub">Disclaimers</span>
+      </div>
+    </div>
+    <p>本サービスは「現状有姿（as-is）」で提供されます。当社は法律が許容する最大限の範囲において、以下の事項に関して一切の保証を行いません。</p>
+    <ol>
+      <li><strong>サービスの継続性：</strong>システムメンテナンス、障害、TikTok API の変更等により、サービスが中断される場合があります。</li>
+      <li><strong>投稿の確実性：</strong>スケジュール設定された投稿が必ずしも正確な時刻に実行されることを保証しません。</li>
+      <li><strong>データの完全性：</strong>技術的な障害によるデータ損失について、当社は責任を負いません。重要なコンテンツは必ずバックアップを保持してください。</li>
+      <li><strong>第三者サービス：</strong>TikTok プラットフォームのポリシー変更・サービス停止による影響について責任を負いません。</li>
+      <li><strong>コンテンツの効果：</strong>本サービスを通じて投稿したコンテンツのマーケティング効果・収益について保証しません。</li>
+      <li><strong>法令遵守：</strong>ユーザーが投稿するコンテンツが薬機法・景品表示法等に適合していることの確認責任はユーザーにあります。</li>
+    </ol>
+    <div class="warning-box">
+      美容・化粧品に関連する広告・宣伝活動は、日本の薬機法（医薬品、医療機器等の品質、有効性及び安全性の確保等に関する法律）の規制を受けます。投稿コンテンツの法令適合性については専門家にご相談ください。
+    </div>
+  </section>
+
+  <!-- Section 8 -->
+  <section class="section" id="s8">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <div class="section-title-group">
+        <h3>サービスの変更・一時停止・終了</h3>
+        <span class="en-sub">Service Modification &amp; Termination</span>
+      </div>
+    </div>
+    <p>当社は、以下の場合においてサービスを変更・一時停止・終了する権利を留保します。</p>
+
+    <h4>8.1 当社による変更</h4>
+    <ul>
+      <li>サービス機能の追加・変更・削除（30 日前までに通知）</li>
+      <li>料金プランの変更（30 日前までに通知）</li>
+      <li>緊急メンテナンスによる一時停止（可能な範囲で事前通知）</li>
+      <li>法令の変更・TikTok API の仕様変更への対応</li>
+    </ul>
+
+    <h4>8.2 アカウント停止・終了</h4>
+    <p>当社は、以下の場合においてユーザーのアカウントを停止・終了する権利を有します。</p>
+    <ul>
+      <li>本規約への重大な違反</li>
+      <li>TikTok のポリシー違反に起因するアカウント停止</li>
+      <li>不正行為・詐欺行為の疑いがある場合</li>
+      <li>支払いの長期滞納（有料プランの場合）</li>
+    </ul>
+
+    <h4>8.3 サービス終了時のデータ</h4>
+    <p>サービスが終了する場合、当社はユーザーに対して少なくとも 60 日前までに通知し、データのエクスポート機会を提供するよう最善を尽くします。ただし、これが技術的・法律的に困難な場合を除きます。</p>
+  </section>
+
+  <!-- Section 9 -->
+  <section class="section" id="s9">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <div class="section-title-group">
+        <h3>損害賠償の制限</h3>
+        <span class="en-sub">Limitation of Liability</span>
+      </div>
+    </div>
+    <p>法律が許容する最大限の範囲において、当社の損害賠償責任は以下に限定されます。</p>
+    <ol>
+      <li>いかなる場合においても、当社の責任総額はユーザーが損害発生の直前 3 ヶ月間に支払った利用料金の総額を上限とします。</li>
+      <li>当社は、間接損害・逸失利益・事業機会の損失・データ損失・評判損害については責任を負いません。</li>
+      <li>TikTok を含む第三者のサービスに起因する損害について責任を負いません。</li>
+    </ol>
+    <p>本条の制限は、当社の故意または重大な過失による損害には適用されません。</p>
+  </section>
+
+  <!-- Section 10 -->
+  <section class="section" id="s10">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <div class="section-title-group">
+        <h3>準拠法・管轄裁判所</h3>
+        <span class="en-sub">Governing Law &amp; Jurisdiction</span>
+      </div>
+    </div>
+    <p>本規約は日本法に準拠し、日本法に従って解釈されます。</p>
+    <p>本規約または本サービスに関連して生じる紛争については、当社の所在地を管轄する地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
+    <p>紛争が生じた場合、当事者はまず誠実な協議による解決を試みるものとします。協議開始から 30 日以内に解決しない場合、いずれかの当事者は法的手続きを開始することができます。</p>
+  </section>
+
+  <!-- Section 11 -->
+  <section class="section" id="s11">
+    <div class="section-header">
+      <div class="section-num">11</div>
+      <div class="section-title-group">
+        <h3>規約の変更</h3>
+        <span class="en-sub">Changes to Terms</span>
+      </div>
+    </div>
+    <p>当社は本規約を随時変更する権利を有します。変更の際には以下の手続きを行います。</p>
+    <ul>
+      <li>重要な変更の場合：施行日の少なくとも 30 日前にサービス内通知およびメールにてお知らせします</li>
+      <li>軽微な変更（誤字修正等）の場合：本ページの更新日を変更してお知らせします</li>
+      <li>法令の変更に伴う緊急の変更：即時施行の場合があります</li>
+    </ul>
+    <p>変更後も本サービスを継続して使用した場合、改定後の規約に同意したものとみなされます。変更に同意いただけない場合は、サービスの利用を中止し、アカウントを削除してください。</p>
+  </section>
+
+  <!-- Section 12 -->
+  <section class="section" id="s12">
+    <div class="section-header">
+      <div class="section-num">12</div>
+      <div class="section-title-group">
+        <h3>お問い合わせ</h3>
+        <span class="en-sub">Contact Us</span>
+      </div>
+    </div>
+    <p>本規約に関するご質問・ご不明点は、以下の窓口までお問い合わせください。</p>
+    <div class="callout">
+      <strong>Beauty Content Manager — サポートチーム</strong>
+      メール：support@beauty-content-manager.example.com<br>
+      受付時間：平日 10:00〜18:00（日本標準時）<br>
+      通常返答時間：3 営業日以内
+    </div>
+    <p>プライバシーに関するお問い合わせ（個人情報の開示・削除請求等）は<a href="privacy.html" style="color: var(--primary); font-weight: 600;">プライバシーポリシー</a>をご参照ください。</p>
+  </section>
+
+</main>
+
+<div class="divider" style="max-width: 900px; margin: 0 auto 0;"></div>
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="terms.html">利用規約</a>
+    <a href="mailto:support@beauty-content-manager.example.com">サポートへ連絡</a>
+  </div>
+  <p>&copy; 2025 Beauty Content Manager. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー | Beauty Content Manager</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #c4779a;
+      --primary-light: #f5e6ee;
+      --primary-dark: #9e5578;
+      --text: #2d2d2d;
+      --text-muted: #6b6b6b;
+      --border: #e8d5df;
+      --bg: #fdfbfc;
+      --surface: #ffffff;
+      --shadow: 0 1px 4px rgba(180, 100, 130, 0.08);
+      --teal: #2e9688;
+      --teal-light: #e6f4f2;
+    }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Noto Sans JP',
+                   'Yu Gothic', 'Meiryo', -apple-system, BlinkMacSystemFont,
+                   'Segoe UI', sans-serif;
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
+    header {
+      background: var(--surface);
+      border-bottom: 2px solid var(--primary);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(196, 119, 154, 0.12);
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-mark svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    .header-text h1 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      letter-spacing: 0.02em;
+    }
+
+    .header-text p {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Main layout */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* Hero banner */
+    .page-hero {
+      background: linear-gradient(135deg, var(--teal-light) 0%, #edfaf7 100%);
+      border: 1px solid #b8e0da;
+      border-radius: 16px;
+      padding: 40px 44px;
+      margin-bottom: 44px;
+    }
+
+    .page-hero h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1d6b5e;
+      letter-spacing: 0.02em;
+      margin-bottom: 6px;
+    }
+
+    .page-hero .en-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--teal);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .page-hero p {
+      color: var(--text-muted);
+      font-size: 14px;
+      max-width: 580px;
+    }
+
+    .effective-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 18px;
+      background: var(--surface);
+      border: 1px solid #b8e0da;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .effective-date::before {
+      content: "📅";
+      font-size: 13px;
+    }
+
+    /* Commitment strip */
+    .commitment-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 640px) {
+      .commitment-strip { grid-template-columns: 1fr; }
+    }
+
+    .commitment-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .commitment-card .icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .commitment-card h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .commitment-card p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 44px;
+      box-shadow: var(--shadow);
+    }
+
+    .toc-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc-counter;
+      columns: 2;
+      column-gap: 24px;
+    }
+
+    @media (max-width: 600px) {
+      .toc ol { columns: 1; }
+    }
+
+    .toc ol li {
+      counter-increment: toc-counter;
+      margin-bottom: 8px;
+      break-inside: avoid;
+    }
+
+    .toc ol li::before {
+      content: counter(toc-counter) ". ";
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .toc ol li a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.15s;
+    }
+
+    .toc ol li a:hover {
+      color: var(--primary);
+    }
+
+    /* Sections */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+      scroll-margin-top: 90px;
+    }
+
+    @media (max-width: 600px) {
+      .page-hero { padding: 28px 24px; }
+      .section { padding: 28px 20px; }
+      .toc { padding: 24px 20px; }
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-num {
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .section-title-group h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .section-title-group .en-sub {
+      font-size: 11px;
+      color: var(--primary);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section p {
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section ul, .section ol {
+      margin: 10px 0 14px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .section ul li, .section ol li {
+      padding: 7px 0 7px 22px;
+      position: relative;
+      border-bottom: 1px solid #faf0f4;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .section ul li:last-child, .section ol li:last-child {
+      border-bottom: none;
+    }
+
+    .section ul li::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 15px;
+      width: 6px;
+      height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    .section ol {
+      counter-reset: list-counter;
+    }
+
+    .section ol li {
+      counter-increment: list-counter;
+    }
+
+    .section ol li::before {
+      content: counter(list-counter);
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 18px;
+      height: 18px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 18px;
+    }
+
+    .callout {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: var(--primary-dark);
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    .callout-teal {
+      background: var(--teal-light);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: #1d6b5e;
+    }
+
+    .callout-teal strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+    }
+
+    .warning-box {
+      background: #fff8f0;
+      border: 1px solid #f0c080;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: #7a5200;
+    }
+
+    .warning-box::before {
+      content: "⚠️  ";
+    }
+
+    h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 20px 0 10px;
+    }
+
+    /* Data table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 13.5px;
+    }
+
+    .data-table th {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-weight: 700;
+      padding: 10px 14px;
+      text-align: left;
+      border: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .data-table tr:nth-child(even) td {
+      background: #fdfbfc;
+    }
+
+    @media (max-width: 600px) {
+      .data-table { font-size: 12px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+    }
+
+    /* Rights grid */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    @media (max-width: 560px) {
+      .rights-grid { grid-template-columns: 1fr; }
+    }
+
+    .right-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      background: var(--bg);
+    }
+
+    .right-card h5 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .right-card h5 span {
+      font-size: 16px;
+    }
+
+    .right-card p {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin: 0 !important;
+    }
+
+    /* Footer */
+    footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px 48px;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0 0 32px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+      </svg>
+    </div>
+    <div class="header-text">
+      <h1>Beauty Content Manager</h1>
+      <p>Privacy Policy</p>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="page-hero">
+    <span class="en-label">Privacy Policy</span>
+    <h2>プライバシーポリシー</h2>
+    <p>Beauty Content Manager は、ユーザーの個人情報の保護を最優先事項として位置づけています。本ポリシーでは、収集する情報の種類、利用目的、保護方法について詳しく説明します。</p>
+    <div class="effective-date">最終更新日：2025年4月1日　／　施行日：2025年4月1日</div>
+  </div>
+
+  <div class="commitment-strip">
+    <div class="commitment-card">
+      <span class="icon">🔒</span>
+      <h4>データを売りません</h4>
+      <p>ユーザーの個人情報を第三者へ販売・貸与することは一切ありません</p>
+    </div>
+    <div class="commitment-card">
+      <span class="icon">🎯</span>
+      <h4>最小限の収集</h4>
+      <p>サービス提供に必要最小限の情報のみを収集します</p>
+    </div>
+    <div class="commitment-card">
+      <span class="icon">🗑️</span>
+      <h4>削除権の保証</h4>
+      <p>ユーザーはいつでもデータの削除を要求できます</p>
+    </div>
+  </div>
+
+  <nav class="toc">
+    <div class="toc-title">目次 — Table of Contents</div>
+    <ol>
+      <li><a href="#p1">事業者情報</a></li>
+      <li><a href="#p2">収集する情報</a></li>
+      <li><a href="#p3">情報の利用目的</a></li>
+      <li><a href="#p4">第三者への提供</a></li>
+      <li><a href="#p5">データの保管と保護</a></li>
+      <li><a href="#p6">データの保存期間</a></li>
+      <li><a href="#p7">ユーザーの権利</a></li>
+      <li><a href="#p8">Cookieの使用</a></li>
+      <li><a href="#p9">子どもの個人情報</a></li>
+      <li><a href="#p10">ポリシーの変更</a></li>
+      <li><a href="#p11">お問い合わせ先</a></li>
+    </ol>
+  </nav>
+
+  <!-- Section 1 -->
+  <section class="section" id="p1">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div class="section-title-group">
+        <h3>事業者情報</h3>
+        <span class="en-sub">Business Information</span>
+      </div>
+    </div>
+    <p>本プライバシーポリシーは、Beauty Content Manager（以下「当社」または「本サービス」）が運営するコンテンツスケジューリングサービスに適用されます。</p>
+    <div class="callout">
+      <strong>個人情報管理責任者</strong>
+      サービス名：Beauty Content Manager<br>
+      メール：privacy@beauty-content-manager.example.com<br>
+      お問い合わせ：support@beauty-content-manager.example.com
+    </div>
+    <p>本ポリシーは、個人情報の保護に関する法律（個人情報保護法）および関連するガイドラインに準拠しています。</p>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="section" id="p2">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div class="section-title-group">
+        <h3>収集する情報</h3>
+        <span class="en-sub">Information We Collect</span>
+      </div>
+    </div>
+    <p>当社は、本サービスの提供に必要な以下の情報を収集します。</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>情報の種類</th>
+          <th>具体的な内容</th>
+          <th>収集方法</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>アカウント情報</strong></td>
+          <td>メールアドレス、パスワード（ハッシュ化）、氏名または表示名</td>
+          <td>登録時に直接入力</td>
+        </tr>
+        <tr>
+          <td><strong>TikTok アカウント情報</strong></td>
+          <td>TikTok ユーザーID、表示名、プロフィール画像 URL、OAuth アクセストークン（暗号化保存）</td>
+          <td>TikTok OAuth 認証を通じて自動取得</td>
+        </tr>
+        <tr>
+          <td><strong>コンテンツデータ</strong></td>
+          <td>アップロードされた動画・画像ファイル、キャプション、ハッシュタグ、スケジュール設定情報</td>
+          <td>ユーザーによるアップロード</td>
+        </tr>
+        <tr>
+          <td><strong>投稿履歴データ</strong></td>
+          <td>投稿日時、投稿ステータス、TikTok 上の投稿ID</td>
+          <td>投稿処理時に自動記録</td>
+        </tr>
+        <tr>
+          <td><strong>利用状況データ</strong></td>
+          <td>ログイン日時、操作ログ、エラーログ、使用機能</td>
+          <td>サービス利用時に自動収集</td>
+        </tr>
+        <tr>
+          <td><strong>技術情報</strong></td>
+          <td>IPアドレス、ブラウザの種類・バージョン、OS、デバイス種別、リファラURL</td>
+          <td>アクセス時に自動収集</td>
+        </tr>
+        <tr>
+          <td><strong>Cookie・類似技術</strong></td>
+          <td>セッションID、ログイン状態保持トークン、設定情報</td>
+          <td>ブラウザへの自動保存（詳細は第8条参照）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout-teal">
+      <strong>収集しない情報</strong>
+      クレジットカード番号等の決済情報は当社サーバーに保存しません（決済処理は認定 PCI DSS 準拠の決済代行業者が担当します）。また、TikTok のダイレクトメッセージや非公開情報には一切アクセスしません。
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="section" id="p3">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div class="section-title-group">
+        <h3>情報の利用目的</h3>
+        <span class="en-sub">Purposes of Use</span>
+      </div>
+    </div>
+    <p>収集した情報は、以下の目的のためにのみ使用します。</p>
+
+    <h4>3.1 サービス提供の目的</h4>
+    <ul>
+      <li>TikTok アカウントへのコンテンツ自動投稿機能の提供</li>
+      <li>スケジュール管理・投稿予約機能の提供</li>
+      <li>投稿履歴・パフォーマンスの表示</li>
+      <li>アカウントの認証・セキュリティ管理</li>
+      <li>ユーザーサポートへの対応</li>
+    </ul>
+
+    <h4>3.2 サービス改善の目的</h4>
+    <ul>
+      <li>サービスの機能改善・バグ修正</li>
+      <li>利用状況の分析（個人を特定しない集計データとして）</li>
+      <li>新機能開発のための調査・研究</li>
+      <li>システムのパフォーマンス監視</li>
+    </ul>
+
+    <h4>3.3 連絡・通知の目的</h4>
+    <ul>
+      <li>サービスに関する重要なお知らせの送付</li>
+      <li>投稿エラー・処理完了の通知</li>
+      <li>利用規約・プライバシーポリシーの変更通知</li>
+      <li>セキュリティアラートの送信</li>
+    </ul>
+
+    <h4>3.4 法令遵守の目的</h4>
+    <ul>
+      <li>不正アクセス・不正利用の検知・防止</li>
+      <li>法令・規制・法的手続きへの対応</li>
+      <li>利用規約違反の調査・対応</li>
+    </ul>
+
+    <div class="warning-box">
+      当社はユーザーの明示的な同意なしに、上記以外の目的で個人情報を使用しません。新たな利用目的が生じた場合は、あらかじめユーザーの同意を求めます。
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section class="section" id="p4">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div class="section-title-group">
+        <h3>第三者への提供</h3>
+        <span class="en-sub">Sharing with Third Parties</span>
+      </div>
+    </div>
+    <p>当社は、ユーザーの個人情報を原則として第三者に提供しません。ただし、以下の場合を除きます。</p>
+
+    <h4>4.1 サービス提供上の必要な共有</h4>
+    <div class="callout">
+      <strong>TikTok API を通じた投稿処理（最重要）</strong>
+      本サービスの中核機能として、ユーザーがアップロードしたコンテンツ（動画、キャプション、ハッシュタグ等）は TikTok API を通じて TikTok プラットフォームに送信されます。これはユーザーが明示的に指示した投稿行為であり、TikTok 社のプライバシーポリシーが適用されます。
+    </div>
+
+    <h4>4.2 業務委託先（処理者）</h4>
+    <p>当社は、以下の業務委託先にサービス提供に必要な範囲で個人情報を提供する場合があります。これらの業者は当社の指示のもとで情報を処理し、独自の目的での利用は禁止されています。</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>委託先の種別</th>
+          <th>目的</th>
+          <th>提供する情報</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>クラウドインフラ事業者</td>
+          <td>データの保存・処理</td>
+          <td>全ユーザーデータ（暗号化）</td>
+        </tr>
+        <tr>
+          <td>メール送信サービス</td>
+          <td>通知メールの送信</td>
+          <td>メールアドレス</td>
+        </tr>
+        <tr>
+          <td>分析ツール事業者</td>
+          <td>サービス品質改善</td>
+          <td>匿名化された利用ログ</td>
+        </tr>
+        <tr>
+          <td>決済代行業者</td>
+          <td>サブスクリプション課金</td>
+          <td>メールアドレス、請求情報</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>4.3 法的要求に基づく開示</h4>
+    <p>以下の場合、法的義務として情報を開示することがあります。</p>
+    <ul>
+      <li>裁判所の命令または法的手続きへの対応</li>
+      <li>捜査機関からの適法な情報提供要求</li>
+      <li>当社・ユーザー・第三者の生命・身体・財産の保護のために必要な場合</li>
+    </ul>
+
+    <h4>4.4 事業承継</h4>
+    <p>合併、買収、事業譲渡等の際には、ユーザーデータが承継される場合があります。その場合、承継先にも同等のプライバシー保護を求め、事前にユーザーへ通知します。</p>
+
+    <p><strong>当社は、上記以外の理由でユーザーの個人情報を第三者に販売・貸与・提供することは一切ありません。</strong></p>
+  </section>
+
+  <!-- Section 5 -->
+  <section class="section" id="p5">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <div class="section-title-group">
+        <h3>データの保管と保護</h3>
+        <span class="en-sub">Data Storage &amp; Security</span>
+      </div>
+    </div>
+    <p>当社はユーザーデータの安全性確保のために、以下のセキュリティ対策を実施しています。</p>
+
+    <h4>5.1 技術的対策</h4>
+    <ul>
+      <li><strong>通信の暗号化：</strong>すべての通信は TLS 1.2 以上で暗号化</li>
+      <li><strong>保存データの暗号化：</strong>TikTok アクセストークン等の機密データは AES-256 で暗号化保存</li>
+      <li><strong>パスワード保護：</strong>パスワードは bcrypt によってハッシュ化（平文保存なし）</li>
+      <li><strong>アクセス制御：</strong>最小権限の原則に基づいた従業員アクセス制限</li>
+      <li><strong>ファイアウォール・IDS：</strong>不正アクセスの検知・遮断</li>
+      <li><strong>定期的なセキュリティ監査：</strong>脆弱性の定期スキャンと対応</li>
+    </ul>
+
+    <h4>5.2 組織的対策</h4>
+    <ul>
+      <li>個人情報を扱う従業員への定期的なセキュリティ研修</li>
+      <li>データアクセスログの保存・監視</li>
+      <li>インシデント対応計画の整備</li>
+      <li>業務委託先との秘密保持契約（NDA）締結</li>
+    </ul>
+
+    <h4>5.3 データ保管場所</h4>
+    <p>ユーザーデータは日本国内または EEA（欧州経済領域）に所在するサーバーに保管されます。国外にデータを転送する場合は、適切な保護措置（標準契約条項等）を講じます。</p>
+
+    <div class="warning-box">
+      インターネット上のデータ転送は 100% の安全性を保証できません。当社は合理的な対策を講じていますが、セキュリティ侵害が発生した場合には速やかにユーザーへ通知します。
+    </div>
+  </section>
+
+  <!-- Section 6 -->
+  <section class="section" id="p6">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <div class="section-title-group">
+        <h3>データの保存期間</h3>
+        <span class="en-sub">Data Retention</span>
+      </div>
+    </div>
+    <p>当社はサービス提供に必要な期間のみデータを保存します。</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>データの種別</th>
+          <th>保存期間</th>
+          <th>削除条件</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>アカウント情報</td>
+          <td>アカウント有効期間中</td>
+          <td>アカウント削除後 30 日以内</td>
+        </tr>
+        <tr>
+          <td>TikTok アクセストークン</td>
+          <td>トークン有効期間中</td>
+          <td>連携解除後即時削除</td>
+        </tr>
+        <tr>
+          <td>アップロード済みコンテンツ</td>
+          <td>アカウント有効期間中</td>
+          <td>手動削除後 7 日または退会後 30 日</td>
+        </tr>
+        <tr>
+          <td>投稿履歴・ログ</td>
+          <td>最大 2 年間</td>
+          <td>アカウント削除後 90 日以内</td>
+        </tr>
+        <tr>
+          <td>請求・支払い情報</td>
+          <td>最終取引から 7 年間</td>
+          <td>法令上の保存義務に基づく</td>
+        </tr>
+        <tr>
+          <td>セキュリティログ</td>
+          <td>最大 1 年間</td>
+          <td>自動削除</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section 7 -->
+  <section class="section" id="p7">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <div class="section-title-group">
+        <h3>ユーザーの権利</h3>
+        <span class="en-sub">Your Rights</span>
+      </div>
+    </div>
+    <p>ユーザーは自己の個人情報に関して以下の権利を有します。</p>
+
+    <div class="rights-grid">
+      <div class="right-card">
+        <h5><span>📋</span> 開示請求権</h5>
+        <p>当社が保有するご自身の個人情報の内容を確認・開示するよう請求できます。</p>
+      </div>
+      <div class="right-card">
+        <h5><span>✏️</span> 訂正・追加権</h5>
+        <p>保有する個人情報に誤りがある場合、訂正・追加・削除を請求できます。</p>
+      </div>
+      <div class="right-card">
+        <h5><span>🗑️</span> 削除請求権（忘れられる権利）</h5>
+        <p>アカウント削除または個人情報の削除を請求できます。法的義務のある情報を除き対応します。</p>
+      </div>
+      <div class="right-card">
+        <h5><span>🚫</span> 利用停止請求権</h5>
+        <p>一定の条件のもと、個人情報の利用停止または第三者提供の停止を請求できます。</p>
+      </div>
+      <div class="right-card">
+        <h5><span>📦</span> データポータビリティ</h5>
+        <p>ご自身の投稿履歴・設定データを機械可読形式（JSON/CSV）でエクスポートできます。</p>
+      </div>
+      <div class="right-card">
+        <h5><span>📢</span> 苦情申立権</h5>
+        <p>個人情報の取扱いに不満がある場合、当社または個人情報保護委員会へ申し立てられます。</p>
+      </div>
+    </div>
+
+    <h4>権利行使の方法</h4>
+    <div class="callout">
+      <strong>請求手順</strong>
+      1. privacy@beauty-content-manager.example.com へメールを送信<br>
+      2. 件名に「個人情報〇〇請求」と明記（例：「個人情報開示請求」）<br>
+      3. 本人確認のため登録メールアドレスから送信してください<br>
+      4. 原則として受領後 <strong>30 日以内</strong>に対応します
+    </div>
+    <p>請求が法律上認められないケース（他者の権利を侵害する場合等）には、理由を明示したうえでお断りする場合があります。</p>
+  </section>
+
+  <!-- Section 8 -->
+  <section class="section" id="p8">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <div class="section-title-group">
+        <h3>Cookie の使用</h3>
+        <span class="en-sub">Cookie Policy</span>
+      </div>
+    </div>
+    <p>本サービスでは、サービスの正常な動作と利便性の向上のために Cookie および類似技術を使用します。</p>
+
+    <h4>8.1 使用する Cookie の種類</h4>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Cookie の種類</th>
+          <th>目的</th>
+          <th>保存期間</th>
+          <th>拒否可否</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>必須 Cookie</strong></td>
+          <td>ログインセッション管理、CSRF 防止トークン</td>
+          <td>セッション終了まで / 30 日</td>
+          <td>不可（サービス動作に必須）</td>
+        </tr>
+        <tr>
+          <td><strong>機能 Cookie</strong></td>
+          <td>言語設定、UI設定（ダークモード等）の保存</td>
+          <td>最大 1 年</td>
+          <td>可（機能が制限されます）</td>
+        </tr>
+        <tr>
+          <td><strong>分析 Cookie</strong></td>
+          <td>ページ閲覧数、機能利用状況の集計（匿名）</td>
+          <td>最大 2 年</td>
+          <td>可</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>8.2 Cookie の管理・拒否方法</h4>
+    <p>ブラウザの設定から Cookie を無効化・削除することができます。ただし、必須 Cookie を無効化するとログイン機能が利用できなくなります。</p>
+    <ul>
+      <li>Chrome：設定 → プライバシーとセキュリティ → Cookie</li>
+      <li>Firefox：設定 → プライバシーとセキュリティ → Cookie とサイトデータ</li>
+      <li>Safari：環境設定 → プライバシー → Cookie</li>
+    </ul>
+
+    <h4>8.3 サードパーティ Cookie</h4>
+    <p>現時点において、当社は広告目的のサードパーティ Cookie を使用していません。分析 Cookie については、プライバシーに配慮した設定（IP匿名化、クロスサイトトラッキング無効）のもとで使用します。</p>
+  </section>
+
+  <!-- Section 9 -->
+  <section class="section" id="p9">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <div class="section-title-group">
+        <h3>子どもの個人情報</h3>
+        <span class="en-sub">Children's Privacy</span>
+      </div>
+    </div>
+    <p>本サービスは 13 歳未満の子どもを対象としていません。当社は 13 歳未満の子どもから意図的に個人情報を収集することはありません。</p>
+    <p>13 歳以上 18 歳未満の未成年者がサービスを利用する場合は、保護者の同意が必要です。</p>
+    <p>13 歳未満の子どもが誤ってアカウントを作成したことが判明した場合、当社は速やかにそのアカウントと関連する個人情報を削除します。該当する可能性にお気づきの場合は、support@beauty-content-manager.example.com までご連絡ください。</p>
+  </section>
+
+  <!-- Section 10 -->
+  <section class="section" id="p10">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <div class="section-title-group">
+        <h3>ポリシーの変更</h3>
+        <span class="en-sub">Policy Updates</span>
+      </div>
+    </div>
+    <p>当社はプライバシーポリシーを随時更新することがあります。変更の際には以下の方法でお知らせします。</p>
+    <ol>
+      <li><strong>重大な変更</strong>（収集する情報の種類・利用目的・第三者提供等の変更）：施行日の少なくとも 30 日前にメールおよびサービス内通知でお知らせします。</li>
+      <li><strong>軽微な変更</strong>（表現の明確化・誤字修正等）：本ページの「最終更新日」を更新してお知らせします。</li>
+      <li><strong>法令対応の緊急変更：</strong>即時施行の場合があります。この場合もできる限り速やかに通知します。</li>
+    </ol>
+    <p>変更後のポリシーに同意いただけない場合は、サービスの利用を停止し、アカウント削除をリクエストしてください。変更後も継続してサービスを利用した場合、改定後のポリシーに同意したものとみなされます。</p>
+    <div class="callout-teal">
+      <strong>過去のポリシー</strong>
+      以前のバージョンのプライバシーポリシーが必要な場合は、support@beauty-content-manager.example.com へご連絡ください。
+    </div>
+  </section>
+
+  <!-- Section 11 -->
+  <section class="section" id="p11">
+    <div class="section-header">
+      <div class="section-num">11</div>
+      <div class="section-title-group">
+        <h3>お問い合わせ先</h3>
+        <span class="en-sub">Contact Us</span>
+      </div>
+    </div>
+    <p>プライバシーに関するご質問、個人情報に関する請求、またはセキュリティ上の懸念については、以下の窓口までお問い合わせください。</p>
+    <div class="callout">
+      <strong>個人情報に関するお問い合わせ窓口</strong>
+      メール（プライバシー専用）：privacy@beauty-content-manager.example.com<br>
+      メール（一般サポート）：support@beauty-content-manager.example.com<br>
+      受付時間：平日 10:00〜18:00（日本標準時）<br>
+      通常返答時間：3 営業日以内（開示請求等は 30 日以内）
+    </div>
+    <p>個人情報保護に関する苦情については、当社での解決が困難な場合、個人情報保護委員会（PPC）へお申し立てください。</p>
+    <div class="callout-teal">
+      <strong>個人情報保護委員会</strong>
+      ウェブサイト：https://www.ppc.go.jp/<br>
+      お問い合わせ：https://www.ppc.go.jp/personalinfo/
+    </div>
+    <p>利用規約については<a href="terms.html" style="color: var(--primary); font-weight: 600;">利用規約ページ</a>をご参照ください。</p>
+  </section>
+
+</main>
+
+<div class="divider" style="max-width: 900px; margin: 0 auto 0;"></div>
+
+<footer>
+  <div class="footer-links">
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="terms.html">利用規約</a>
+    <a href="mailto:privacy@beauty-content-manager.example.com">プライバシーに関するお問い合わせ</a>
+  </div>
+  <p>&copy; 2025 Beauty Content Manager. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

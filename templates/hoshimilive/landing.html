@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="description" content="Free AI tarot, daily horoscope, numerology & love readings. Miku ★ Oracle's kawaii AI fortune readings — powered by Anthropic Claude. Try your free card pull now.">
+<meta name="keywords" content="AI tarot, free tarot reading, daily horoscope, numerology, love reading, Miku Oracle, kawaii fortune, anime oracle, AI fortune teller">
+<meta name="theme-color" content="#ffd6e8">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://hoshimilive.com/">
+<!-- Open Graph -->
+<meta property="og:title" content="HoshimiLive — Free AI Tarot & Daily Horoscope by Miku ★">
+<meta property="og:description" content="Draw a free daily tarot card, read your horoscope, or try a numerology reading — all generated live by AI. Miku ★ Oracle's kawaii celestial readings.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hoshimilive.com/">
+<meta property="og:image" content="https://hoshimilive.com/static/og-card.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="HoshimiLive">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HoshimiLive — Free AI Tarot & Daily Horoscope">
+<meta name="twitter:description" content="Free daily tarot, horoscopes, numerology & love readings from Miku ★ Oracle. AI-powered kawaii fortune entertainment.">
+<meta name="twitter:image" content="https://hoshimilive.com/static/og-card.png">
+<title>Free AI Tarot & Daily Horoscope — HoshimiLive · Miku ★ Oracle</title>
+<!-- JSON-LD structured data for rich search results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "HoshimiLive",
+  "url": "https://hoshimilive.com/",
+  "description": "AI-powered entertainment tarot, horoscope, numerology and love readings.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://hoshimilive.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "HoshimiLive",
+    "url": "https://hoshimilive.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Miku ★ Oracle AI Tarot Reading",
+  "provider": {
+    "@type": "Organization",
+    "name": "HoshimiLive"
+  },
+  "description": "AI-generated entertainment tarot card readings. Free daily pull, paid detailed readings. Fictional AI oracle character — for entertainment only.",
+  "areaServed": "Worldwide",
+  "serviceType": "Entertainment reading"
+}
+</script>
+<style>
+  :root {
+    --pink: #ffd6e8;
+    --pink-deep: #ff8ec2;
+    --purple: #d6c6ff;
+    --purple-deep: #a68bff;
+    --ink: #3a2a4a;
+    --glow: rgba(255, 180, 220, 0.6);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+  /* Twinkling stars background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(2px 2px at 20% 30%, white, transparent),
+      radial-gradient(1px 1px at 60% 70%, white, transparent),
+      radial-gradient(1px 1px at 80% 20%, white, transparent),
+      radial-gradient(2px 2px at 35% 85%, white, transparent),
+      radial-gradient(1px 1px at 75% 50%, white, transparent),
+      radial-gradient(1px 1px at 10% 60%, white, transparent);
+    background-size: 600px 600px;
+    opacity: 0.6;
+    animation: twinkle 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+
+  nav {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 16px 24px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  nav a {
+    color: var(--ink);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  nav a:hover { opacity: 1; }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    position: relative;
+    z-index: 1;
+  }
+
+  header {
+    text-align: center;
+    padding: 32px 0 24px;
+  }
+  .logo {
+    font-size: 48px;
+    margin-bottom: 8px;
+    display: block;
+    text-shadow: 0 0 20px var(--glow);
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  h1 {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+  .tagline {
+    font-size: 16px;
+    opacity: 0.75;
+    margin-bottom: 4px;
+  }
+  .disclosure {
+    font-size: 13px;
+    opacity: 0.6;
+    font-style: italic;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 32px 28px;
+    box-shadow: 0 20px 60px rgba(180, 120, 200, 0.2);
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+  .card h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  .card p {
+    font-size: 15px;
+    opacity: 0.85;
+    margin-bottom: 16px;
+  }
+
+  .btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--pink-deep), var(--purple-deep));
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 8px 24px rgba(255, 142, 194, 0.4);
+    text-decoration: none;
+    font-family: inherit;
+  }
+  .btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(255, 142, 194, 0.5);
+  }
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+  .btn-block {
+    width: 100%;
+    display: block;
+  }
+  .btn-outline {
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--purple-deep);
+    box-shadow: none;
+    border: 2px solid var(--purple-deep);
+  }
+  .btn-outline:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 24px rgba(166, 139, 255, 0.25);
+  }
+
+  .result {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    border-left: 4px solid var(--pink-deep);
+    display: none;
+  }
+  .result.visible { display: block; animation: fadein 0.5s ease; }
+  @keyframes fadein { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .result .card-name {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--purple-deep);
+  }
+  .result .card-text {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .result .card-cta {
+    font-size: 13px;
+    opacity: 0.7;
+    font-style: italic;
+  }
+  .result.error { border-left-color: #ff6b6b; }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .feature {
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 14px;
+    text-align: center;
+    font-size: 13px;
+  }
+  .feature .emoji { font-size: 28px; display: block; margin-bottom: 6px; }
+  .feature .desc { font-size: 11px; opacity: 0.65; margin-top: 4px; display: block; }
+
+  .how-it-works {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .step {
+    text-align: center;
+    padding: 12px;
+  }
+  .step .num {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--pink-deep), var(--purple-deep));
+    color: white;
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .step .title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+  .step .detail { font-size: 12px; opacity: 0.7; }
+
+  .trust-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 16px 0;
+    font-size: 12px;
+    opacity: 0.7;
+  }
+  .trust-badges span { display: flex; align-items: center; gap: 4px; }
+
+  .cta-section {
+    text-align: center;
+    padding: 8px 0;
+  }
+  .cta-section .btn { margin: 6px; }
+
+  footer {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 12px;
+    opacity: 0.6;
+  }
+  footer a { color: var(--ink); margin: 0 8px; }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 28px; }
+    .logo { font-size: 40px; }
+    .card { padding: 24px 20px; }
+    .how-it-works { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/">Home</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/contact">Contact</a>
+  <a href="/terms">Terms</a>
+  <a href="/privacy">Privacy</a>
+</nav>
+
+<div class="container">
+
+  <header>
+    <span class="logo">✨</span>
+    <h1>HoshimiLive</h1>
+    <p class="tagline">AI-powered entertainment readings by <strong>Miku ★ Oracle</strong></p>
+    <p class="disclosure">Miku is a fictional AI character. All readings are generated by AI (Anthropic Claude) for entertainment only — not advice.</p>
+  </header>
+
+  <!-- Try it free -->
+  <section class="card">
+    <h2>🔮 Try a Free Tarot Reading</h2>
+    <p>Let Miku pull one card just for you. Tap below and the stars will whisper ~</p>
+
+    <button id="draw-btn" class="btn btn-block" type="button">Draw My Card ✨</button>
+
+    <div id="result" class="result" aria-live="polite">
+      <div class="card-name" id="result-card">—</div>
+      <div class="card-text" id="result-text">—</div>
+      <div class="card-cta" id="result-cta">—</div>
+    </div>
+  </section>
+
+  <!-- Available readings -->
+  <section class="card">
+    <h2>💖 Available Readings</h2>
+    <p>Four types of AI-generated entertainment readings, all delivered in Miku's signature kawaii style:</p>
+    <div class="feature-grid">
+      <div class="feature">
+        <span class="emoji">🎴</span>Daily Tarot
+        <span class="desc">Single-card pulls with daily guidance</span>
+      </div>
+      <div class="feature">
+        <span class="emoji">🌙</span>Horoscopes
+        <span class="desc">Daily readings for all 12 signs</span>
+      </div>
+      <div class="feature">
+        <span class="emoji">🔢</span>Numerology
+        <span class="desc">Life-path readings from your birthdate</span>
+      </div>
+      <div class="feature">
+        <span class="emoji">💞</span>Love Readings
+        <span class="desc">Energy-based relationship insights</span>
+      </div>
+    </div>
+    <div class="cta-section">
+      <a class="btn" href="/pricing">See Plans &amp; Pricing</a>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="card">
+    <h2>🛠 How It Works</h2>
+    <div class="how-it-works">
+      <div class="step">
+        <span class="num">1</span>
+        <div class="title">Pick a Reading</div>
+        <div class="detail">Choose tarot, horoscope, numerology, or love</div>
+      </div>
+      <div class="step">
+        <span class="num">2</span>
+        <div class="title">AI Generates</div>
+        <div class="detail">Miku crafts your reading using Anthropic Claude</div>
+      </div>
+      <div class="step">
+        <span class="num">3</span>
+        <div class="title">Enjoy &amp; Share</div>
+        <div class="detail">Fun entertainment to brighten your day</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI / Entertainment disclosure -->
+  <section class="card">
+    <h2>🤖 About This Service</h2>
+    <p>HoshimiLive is an <strong>AI entertainment platform</strong>. Miku ★ Oracle is a fictional AI virtual character — not a human, not a psychic, and not a fortune-teller. Every reading is generated by large language models (Anthropic Claude) and is clearly labeled as entertainment.</p>
+    <p style="margin-bottom: 0;">We do <strong>not</strong> provide medical, legal, psychological, or financial advice. Think of it like a magic 8-ball or a personality quiz — fun, lighthearted, and never meant to replace professional guidance.</p>
+    <div class="trust-badges">
+      <span>🔒 AI-disclosed on every reading</span>
+      <span>🛡 14-day refund guarantee</span>
+      <span>📜 FTC-compliant disclaimers</span>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 HoshimiLive · Miku ★ Oracle is a fictional AI virtual character · All readings are AI-generated entertainment</p>
+    <p style="margin-top: 6px;">
+      <a href="/pricing">Pricing</a> ·
+      <a href="/refund">Refunds</a> ·
+      <a href="/contact">Contact</a> ·
+      <a href="/terms">Terms</a> ·
+      <a href="/privacy">Privacy</a>
+    </p>
+  </footer>
+
+</div>
+
+<script>
+(function() {
+  const btn = document.getElementById('draw-btn');
+  const result = document.getElementById('result');
+  const cardEl = document.getElementById('result-card');
+  const textEl = document.getElementById('result-text');
+  const ctaEl = document.getElementById('result-cta');
+
+  btn.addEventListener('click', async function() {
+    btn.disabled = true;
+    btn.textContent = 'Consulting the stars ~';
+    result.classList.remove('visible', 'error');
+
+    try {
+      const resp = await fetch('/api/fortune/tarot', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({theme: 'general daily guidance'})
+      });
+
+      if (!resp.ok) {
+        const err = await resp.json().catch(() => ({}));
+        throw new Error(err.detail || 'The stars are quiet right now ~');
+      }
+
+      const data = await resp.json();
+      cardEl.textContent = (data.card_name || 'The Star') + ' ✨';
+      textEl.textContent = data.text || 'Your energy is shimmering today, darling ~';
+      ctaEl.textContent = data.cta || 'DM ORACLE for a deeper reading 💌';
+      result.classList.add('visible');
+    } catch (e) {
+      cardEl.textContent = '✨';
+      textEl.textContent = e.message || 'The stars are resting ~ try again soon';
+      ctaEl.textContent = '';
+      result.classList.add('visible', 'error');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Draw Again ✨';
+    }
+  });
+})();
+</script>
+<script>
+  // Real-browser heartbeat — distinguishes human visitors from bots that
+  // fetch the HTML but don't execute JS (validates the bot-traffic hypothesis).
+  try { fetch('/api/lp/heartbeat', {method: 'POST', keepalive: true}); } catch (e) {}
+</script>
+</body>
+</html>

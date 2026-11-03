@@ -1,0 +1,15 @@
+file '01_dashboard.png'
+duration 3
+file '02_content_gen.png'
+duration 3
+file '03_content_result.png'
+duration 3
+file '04_schedule.png'
+duration 3
+file '05_trends.png'
+duration 3
+file '06_analytics.png'
+duration 3
+file '07_health.png'
+duration 3
+file '07_health.png'

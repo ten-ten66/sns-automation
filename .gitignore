@@ -1,0 +1,75 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Database
+*.db
+*.db-journal
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Generated media (top-level only — DO NOT match src/media which is a Python package)
+/media/
+
+# Instagram sessions
+*session*.json
+
+# Alembic
+alembic/versions/__pycache__/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage
+.coverage
+htmlcov/
+
+# Logs
+*.log
+
+# Virtual environments
+venv/
+.venv/
+
+# Local agent / tool state (not project source)
+.claude/
+.omc/
+
+# Editor / OS scratch backups
+*.bak
+*.bak.*
+# --- secrets ---
+*.pem
+*.key
+# --- data / runtime ---
+*.db-*
+*.sqlite*
+logs/
+output/
+*.pkl
+*.csv
+*.zip
+*.tar.gz
+# --- deps / build ---
+node_modules/
+.pytest_cache/
+.next/
+*.tsbuildinfo
+# --- tools / os ---
+*.bak_*
